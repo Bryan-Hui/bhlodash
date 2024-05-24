@@ -1,3 +1,3 @@
-import add from './add.ts'
+module.exports = {};
 
-export add
+module.exports.add = require("./add");
