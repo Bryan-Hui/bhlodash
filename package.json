@@ -4,26 +4,34 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "tsc --build",
     "test": "jest",
-    "dev": "rollup -w -c"
+    "dev": "rm -fr dist && rollup -cw",
+    "build": "cross-env NODE_ENV=development rollup -c -o dist/ramda.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "jest": "^29.7.0",
+    "lodash": "^4.17.21",
     "rollup-plugin-serve": "^1.1.1",
-    "rollup-plugin-typescript2": "^0.36.0",
-    "build": "rollup -c",
-    "dev": "rollup -cw"
+    "rollup-plugin-typescript2": "^0.36.0"
   },
   "devDependencies": {
-    "@rollup/plugin-commonjs": "^25.0.7",
+    "@babel/preset-env": "^7.24.5",
+    "@rollup/plugin-alias": "^5.1.0",
+    "@rollup/plugin-babel": "^6.0.4",
+    "@rollup/plugin-commonjs": "^25.0.8",
+    "@rollup/plugin-json": "^6.1.0",
     "@rollup/plugin-node-resolve": "^15.2.3",
     "@rollup/plugin-typescript": "^11.1.6",
     "cross-env": "^7.0.3",
+    "esbuild": "^0.21.4",
     "rollup": "^4.18.0",
+    "rollup-plugin-esbuild": "^6.1.1",
+    "rollup-plugin-terser": "^7.0.2",
+    "rollup-plugin-uglify": "^6.0.4",
+    "tslib": "^2.6.2",
     "typescript": "^5.4.5"
   }
 }
