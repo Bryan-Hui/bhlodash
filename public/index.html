@@ -7,11 +7,13 @@
   </head>
   <body>
     <script src="/dist/bundle.js"></script>
-    <script type="module">
-      // const add = require("bu");
-      // console.log(add);
-      // import { add } from "index";
-      console.log("add ", add);
-    </script>
+    <script>
+      // 等待 DOM 内容加载完成
+      document.addEventListener('DOMContentLoaded', function() {
+          // 使用 Ramda 库
+          const { add } = L;
+          console.log('add',add)
+      });
+  </script>
   </body>
 </html>
