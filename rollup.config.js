@@ -160,19 +160,19 @@
 
 // 'use strict';
 
-// const { babel } = require('@rollup/plugin-babel');
-// // uglify handles only es5 code, so this also acts as smoke test against shipping es2015+ syntax
-// const { uglify } = require('rollup-plugin-uglify');
-// const pkg = require('./package.json');
-// const path = require('path')
-// const commonjs = require('@rollup/plugin-commonjs')
+const { babel } = require('@rollup/plugin-babel');
+// uglify handles only es5 code, so this also acts as smoke test against shipping es2015+ syntax
+const { uglify } = require('rollup-plugin-uglify');
+const pkg = require('./package.json');
+const path = require('path')
+const commonjs = require('@rollup/plugin-commonjs')
 
-import { babel } from '@rollup/plugin-babel'
-import uglify from 'rollup-plugin-uglify'
-import pkg from './package.json'
-import path from 'path'
-import commonjs from '@rollup/plugin-commonjs'
-import Json from '@rollup/plugin-json'
+// import { babel } from '@rollup/plugin-babel'
+// import uglify from 'rollup-plugin-uglify'
+// import pkg from './package.json'
+// import path from 'path'
+// import commonjs from '@rollup/plugin-commonjs'
+// import Json from '@rollup/plugin-json'
 
 const banner = '//  bhlodash v' + pkg.version + '\n'
     + '//  https://github.com/ramda/ramda\n'
@@ -188,7 +188,7 @@ const config = {
         file: path.resolve(__dirname, 'dist/bundle.js'),
         format: 'umd',
         name: 'L',
-        exports: 'named',
+        // exports: 'named',
         banner: banner
     },
     plugins: [
@@ -197,7 +197,7 @@ const config = {
             presets: [['@babel/preset-env', { targets: { ie: '11' } }]]
         }),
         commonjs(),
-        Json()
+        // Json()
     ]
 };
 
